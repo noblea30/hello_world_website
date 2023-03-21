@@ -13,9 +13,9 @@ fileInput.addEventListener("change", function() {
   const reader = new FileReader();
   reader.addEventListener("load", function() {
     const fileContent = reader.result;
-    const displayArea = document.createElement("pre");
-    displayArea.textContent = fileContent;
-    document.body.appendChild(displayArea);
+    const img = document.createElement("img");
+    img.src = fileContent;
+    document.body.appendChild(img);
   });
-  reader.readAsText(file);
+  reader.readAsDataURL(file);
 });
