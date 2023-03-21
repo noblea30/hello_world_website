@@ -11,11 +11,13 @@ uploadBtn.addEventListener("click", function() {
 fileInput.addEventListener("change", function() {
   const file = fileInput.files[0];
   const reader = new FileReader();
+
   reader.addEventListener("load", function() {
     const fileContent = reader.result;
-    const img = document.createElement("img");
+    const img = new Image();
     img.src = fileContent;
     document.body.appendChild(img);
   });
+
   reader.readAsDataURL(file);
 });
